@@ -19,6 +19,14 @@ PKG_LICENSE:=GPLv3
 PKG_LICENSE_FILES:=LICENSE
 PKG_MAINTAINER:=Hao Dong <halbertdong@gmail.com>
 
-include ../../luci.mk
+include $(TOPDIR)/feeds/luci/luci.mk
+
+define Package/$(PKG_NAME)/postinst
+#!/bin/sh
+chmod 755 "$${IPKG_INSTROOT}/etc/init.d/udpspeeder" >/dev/null 2>&1
+ln -sf "../init.d/udpspeeder" \
+	"$${IPKG_INSTROOT}/etc/rc.d/S88udpspeeder" >/dev/null 2>&1
+exit 0
+endef
 
 # call BuildPackage - OpenWrt buildroot signature
