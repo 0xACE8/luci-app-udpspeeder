@@ -2,7 +2,7 @@ msgid ""
 msgstr "Content-Type: text/plain; charset=UTF-8\n"
 
 msgid "udpspeeder-tunnel"
-msgstr "udp加速-隧道"
+msgstr "udpspeeder-隧道"
 
 msgid "Settings"
 msgstr "设置"
